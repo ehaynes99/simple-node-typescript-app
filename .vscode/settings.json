@@ -1,0 +1,7 @@
+{
+  "jestrunner.runOptions": [
+    "--watch",
+    "--no-coverage"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
