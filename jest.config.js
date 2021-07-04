@@ -1,6 +1,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  transform: { '^.+\\.[jt]s$': 'ts-jest' },
   testMatch: ['<rootDir>/src/**/*.(spec|test).(t|j)s'],
   clearMocks: true,
   collectCoverage: true,
