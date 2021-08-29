@@ -23,15 +23,14 @@
     "prepublishOnly": "npm run test && npm run build"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.12.1",
-    "eslint-config-erich-node": "^1.1.9",
-    "husky": "^6.0.0",
-    "jest": "^27.0.4",
-    "lint-staged": "^11.0.0",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.6.1",
+    "eslint-config-erich-node": "^1.1.10",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
     "rimraf": "^3.0.2",
-    "ts-jest": "^27.0.3",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.2"
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
   }
 }
