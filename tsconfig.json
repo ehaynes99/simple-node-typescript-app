@@ -4,7 +4,7 @@
     "target": "es2019",
     "lib": ["es2020"],
     "sourceMap": true,
-    "rootDir": "src",
+    "rootDir": ".",
     "baseUrl": "src",
     "outDir": "dist",
     "declaration": true,
