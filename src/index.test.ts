@@ -1,5 +1,5 @@
-import index from './index';
+import { hello } from './index';
 
 it('says hello', async () => {
-  expect(index()).toEqual('hello');
+  expect(hello()).toEqual('hello');
 });
