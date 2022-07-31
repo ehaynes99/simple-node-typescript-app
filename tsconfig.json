@@ -1,5 +1,8 @@
 {
   "extends": "./tsconfig.build.json",
+  "ts-node": {
+    "swc": true
+  },
   "include": ["src"],
   "exclude": [],
 }
