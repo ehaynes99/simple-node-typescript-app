@@ -9,7 +9,7 @@
     "outDir": "dist",
     "declaration": true,
     "moduleResolution": "node",
-    "removeComments": true,
+    "removeComments": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
