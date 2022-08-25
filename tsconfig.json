@@ -3,6 +3,6 @@
   "ts-node": {
     "swc": true
   },
-  "include": ["src"],
+  "include": ["src", "test"],
   "exclude": [],
 }
