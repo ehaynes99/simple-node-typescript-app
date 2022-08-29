@@ -13,7 +13,6 @@
     "build": "tsc -b tsconfig.build.json",
     "clean": "rimraf dist",
     "test": "jest",
-    "precommit": "lint-staged",
     "start": "node dist/index.js",
     "lint": "eslint src",
     "start:dev": "ts-node src/index.ts"
