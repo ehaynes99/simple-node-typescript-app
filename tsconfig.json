@@ -3,6 +3,9 @@
   "ts-node": {
     "swc": true
   },
+  "compilerOptions": {
+    "rootDir": ".",
+  },
   "include": ["src", "test"],
   "exclude": [],
 }
