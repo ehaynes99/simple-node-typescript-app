@@ -9,13 +9,12 @@
     "dist"
   ],
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
-    "format": "eslint --fix --ignore-path .gitignore .",
+    "clean": "rm -rf ./dist",
+    "lint": "eslint --cache --ignore-path .gitignore .",
+    "format": "npm run lint -- --fix",
+    "typecheck": "tsc --noEmit",
     "build": "tsc -b tsconfig.build.json",
-    "clean": "rimraf dist",
-    "test": "jest",
-    "start": "node dist/index.js",
-    "start:dev": "ts-node src/index.ts"
+    "test": "jest --coverage"
   },
   "peerDependencies": {},
   "dependencies": {},
