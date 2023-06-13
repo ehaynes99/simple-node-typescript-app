@@ -1,21 +1,30 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 1 ]
-then
- echo "Must supply a name"
- exit 1
+if [ "$#" -ne 1 ]; then
+  echo "Must supply a name"
+  exit 1
 fi
 
-FULL_PATH="$1"
-basename path/to/project
-DIR=$(dirname $FULL_PATH)
-NAME=$(basename $FULL_PATH)
+FULL_PATH=$(realpath "$1")
 
-mkdir -p $DIR
-cd $DIR
-git clone git@github.com:ehaynes99/simple-node-typescript-app.git $NAME
-cd $NAME
-find . -type f -exec perl -pi -e"s/simple-node-typescript-app/${NAME}/g" {} +
+NAME=$(basename "$FULL_PATH")
+
+if [[ -e "$FULL_PATH" ]]; then
+  echo "path already exists: $(realpath "$FULL_PATH")"
+  read -p "Open with nvim? [Y]/n" -n 1 -r
+  echo ''
+  if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+    cd "$FULL_PATH" || exit
+    nvim
+  fi
+  exit 1
+fi
+
+mkdir -p "$FULL_PATH"
+cd "$DIR" || (echo "$DIR does not exist" && return)
+git clone git@github.com:ehaynes99/simple-node-typescript-app.git "$FULL_PATH"
+cd "$FULL_PATH" || (echo "$FULL_PATH does not exist" && return)
+find . -type f -exec perl -pi -e"s/library-example/${NAME}/g" {} +
 npm i
 rm -rf .git
 rm -rf ./src/*
@@ -25,9 +34,9 @@ git init .
 git add .
 git commit -m"Create project"
 
-read -p "Open with code? [Y]/n" -n 1 -r
-echo    # (optional) move to a new line
-if [[ ! $REPLY =~ ^[Nn]$ ]]
-then
-  code .
+read -p "Open with nvim? [Y]/n" -n 1 -r
+echo ''
+if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+	nvim
 fi
+
