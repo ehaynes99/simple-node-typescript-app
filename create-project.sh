@@ -6,6 +6,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 FULL_PATH=$(realpath "$1")
+TEMPLATE_REPO='git@github.com:ehaynes99/simple-node-typescript-app.git'
 
 NAME=$(basename "$FULL_PATH")
 
@@ -22,7 +23,7 @@ fi
 
 mkdir -p "$FULL_PATH"
 cd "$DIR" || (echo "$DIR does not exist" && return)
-git clone git@github.com:ehaynes99/simple-node-typescript-app.git "$FULL_PATH"
+git clone "$TEMPLATE_REPO" "$FULL_PATH"
 cd "$FULL_PATH" || (echo "$FULL_PATH does not exist" && return)
 nvm use
 find . -type f -exec perl -pi -e"s/library-example/${NAME}/g" {} +
@@ -40,3 +41,4 @@ echo ''
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
   nvim
 fi
+
