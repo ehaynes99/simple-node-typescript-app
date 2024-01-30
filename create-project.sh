@@ -24,6 +24,7 @@ mkdir -p "$FULL_PATH"
 cd "$DIR" || (echo "$DIR does not exist" && return)
 git clone git@github.com:ehaynes99/simple-node-typescript-app.git "$FULL_PATH"
 cd "$FULL_PATH" || (echo "$FULL_PATH does not exist" && return)
+nvm use
 find . -type f -exec perl -pi -e"s/library-example/${NAME}/g" {} +
 npm i
 rm -rf .git
@@ -37,6 +38,5 @@ git commit -m"Create project"
 read -p "Open with nvim? [Y]/n" -n 1 -r
 echo ''
 if [[ ! $REPLY =~ ^[Nn]$ ]]; then
-	nvim
+  nvim
 fi
-
