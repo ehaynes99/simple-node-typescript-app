@@ -1,26 +1,24 @@
 {
   "name": "simple-node-typescript-app",
   "version": "0.0.0",
-  "author": "Eric Haynes",
   "license": "ISC",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "engines": {
-    "node": ">=22",
-    "npm": "USE PNPM!",
-    "pnpm": ">=8.14.1"
+  "author": "Eric Haynes (https://github.com/ehaynes99)",
+  "type": "module",
+  "exports": {
+    "import": "./dist/index.js",
+    "types": "./src/index.ts"
   },
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "lint": "eslint --cache --ignore-path .gitignore .",
-    "format": "npm run lint -- --fix",
-    "typecheck": "tsc --noEmit",
     "build": "tsc -b tsconfig.build.json",
-    "test": "vitest run"
+    "clean": "rm -rf ./dist",
+    "format": "npm run lint -- --fix",
+    "lint": "eslint --cache .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@swc/core": "^1.12.7",
@@ -28,9 +26,15 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.6",
     "@vitest/coverage-v8": "^3.2.4",
-    "eslint-config-erich": "^3.0.0",
+    "eslint": "^9.30.0",
+    "eslint-config-erich": "4.0.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": "USE PNPM!",
+    "pnpm": ">=10.12.4"
   }
 }

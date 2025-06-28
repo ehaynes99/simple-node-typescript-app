@@ -25,9 +25,8 @@ mkdir -p "$FULL_PATH"
 cd "$DIR" || (echo "$DIR does not exist" && return)
 git clone "$TEMPLATE_REPO" "$FULL_PATH"
 cd "$FULL_PATH" || (echo "$FULL_PATH does not exist" && return)
-nvm use
 find . -type f -exec perl -pi -e"s/library-example/${NAME}/g" {} +
-npm i
+pnpm i
 rm -rf .git
 rm -rf ./src/*
 touch ./src/index.ts

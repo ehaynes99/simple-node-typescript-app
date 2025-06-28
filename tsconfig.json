@@ -4,10 +4,7 @@
     "rootDir": ".",
     "noEmit": true
   },
-  "ts-node": {
-    "swc": true
-  },
-  "include": ["."],
+  "include": ["src", "test"],
   "exclude": ["node_modules", "dist"]
 }
 
