@@ -2,9 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "esModuleInterop": true,
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "outDir": "dist",
@@ -12,9 +10,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "types": ["node"],
+    "types": ["node"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

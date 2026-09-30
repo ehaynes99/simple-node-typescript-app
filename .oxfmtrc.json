@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 120,
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleQuote": true,
+  "sortImports": {
+    "groups": ["side_effect", "builtin", "external", "internal", ["parent", "sibling", "index"]]
+  },
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
+}
