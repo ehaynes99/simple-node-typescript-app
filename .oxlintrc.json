@@ -31,7 +31,7 @@
     "import-x-js/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/eslint.config.{js,mjs}", "**/*.test.ts", "test/**", "vitest.config.ts"],
+        "devDependencies": ["**/*.test.ts", "test/**", "vitest.config.ts"],
         "optionalDependencies": false
       }
     ],
